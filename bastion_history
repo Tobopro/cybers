@@ -1,0 +1,76 @@
+  23  sudo ./configure --with-systemd-dir=/etc/systemd/system/
+   24  cd /tmp/
+   25  cd guacamole-server-1.5.5/
+   26  ls
+   27  sudo ./configure --with-systemd-dir=/etc/systemd/system/ --disable-guacenc
+   28  sudo ./configure --with-systemd-dir=/etc/systemd/system/
+   29  sudo apt update
+   30  sudo apt install build-essential
+   31  sudo ./configure --with-systemd-dir=/etc/systemd/system/
+   32  sudo apt install libpng-dev
+   33  sudo apt install build-essential libcairo2-dev libjpeg-turbo8-dev libpng-dev libtool-bin libossp-uuid-dev libavcodec-dev libavformat-dev libavutil-dev libswscale-dev freerdp2-dev libpango1.0-dev libssh2-1-dev libtelnet-dev libvncserver-dev libpulse-dev libssl-dev libvorbis-dev libwebp-dev
+   34  sudo ./configure --with-systemd-dir=/etc/systemd/system/
+   35  sudo apt install libjpeg-dev
+   36  sudo ./configure --with-systemd-dir=/etc/systemd/system/
+   37  sudo apt install libcairo2-dev libpng-dev libfreerdp-dev libpango1.0-dev libssh2-1-dev libtelnet-dev libvncserver-dev libpulse-dev libwebsockets-dev libssl-dev
+   38  sudo apt install freerdp2-dev
+   39  sudo apt install libcairo2-dev libpng-dev freerdp2-dev libpango1.0-dev libssh2-1-dev libtelnet-dev libvncserver-dev libpulse-dev libwebsockets-dev libssl-dev
+   40  sudo ./configure --with-systemd-dir=/etc/systemd/system/
+   41  sudo apt install libavcodec-dev libavformat-dev libavutil-dev libswscale-dev libvorbis-dev libwebp-dev
+   42  sudo ./configure --with-systemd-dir=/etc/systemd/system/ --disable-guacenc
+   43  sudo make
+   44  sudo make install
+   45  sudo ldconfig
+   46  sudo systemctl daemon-reload
+   47  sudo systemctl enable --now guacd
+   48  sudo systemctl status guacd
+   49  sudo mkdir -p /etc/guacamole/{extensions,lib}
+   50  sudo nano /etc/apt/sources.list.d/bullseye.list
+   51  sudo apt-get update
+   52  sudo apt-get install tomcat9 tomcat9-admin tomcat9-common tomcat9-user
+   53  cd /tmp
+   54  wget https://downloads.apache.org/guacamole/1.5.5/binary/guacamole-1.5.5.war
+   55  sudo mv guacamole-1.5.5.war /var/lib/tomcat9/webapps/guacamole.war
+   56  sudo systemctl restart tomcat9 guacd
+   57  sudo apt-get install mariadb-server
+   58  sudo mysql_secure_installation
+   59  mysql -u root -p
+   60  cd /tmp
+   61  wget https://downloads.apache.org/guacamole/1.5.5/binary/guacamole-auth-jdbc-1.5.5.tar.gz
+   62  tar -xzf guacamole-auth-jdbc-1.5.5.tar.gz
+   63  sudo mv guacamole-auth-jdbc-1.5.5/mysql/guacamole-auth-jdbc-mysql-1.5.5.jar /etc/guacamole/extensions/
+   64  wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-j-9.1.0.tar.gz
+   65  tar -xzf mysql-connector-j-9.1.0.tar.gz
+   66  sudo cp mysql-connector-j-9.1.0/mysql-connector-j-9.1.0.jar /etc/guacamole/lib/
+   67  cd guacamole-auth-jdbc-1.5.5/mysql/schema/
+   68  cat *.sql | mysql -u root -p guacadb
+   69  sudo nano /etc/guacamole/guacamole.properties
+   70  sudo nano /etc/guacamole/guacd.conf
+   71  sudo systemctl restart tomcat9 guacd mariadb
+   72  sudo systemctl status guacd
+   73  sudo systemctl start guacd
+   74  sudo systemctl enable guacd
+   75  guacd -f
+   76  sudo cp guacamole.war /var/lib/tomcat9/webapps/
+   77  sudo systemctl restart tomcat9
+   78  cat /etc/guacamole/guacamole.properties
+   79  sudo cp guacamole.war /var/lib/tomcat9/webapps/
+   80  cd /tmp/
+   81  ms
+   82  ls
+   83  wget https://downloads.apache.org/guacamole/1.5.5/binary/guacamole-1.5.5.war -O guacamole.war
+   84  sudo cp guacamole.war /var/lib/tomcat9/webapps/
+   85  sudo systemctl restart tomcat9
+   86  sudo journalctl -u tomcat9 -f
+   87  sudo nano /etc/guacamole/guacamole.properties
+   88  mysql -u root -p
+   89  sudo systemctl restart tomcat9
+   90  history
+   91  ping 192.168.1.34
+   92  sudo systemctl status guacd
+   93  ping 192.168.1.32
+   94  sudo journalctl -u tomcat9 -f
+   95  history
+   96  ping 192.168.1.12
+   97  sudo journalctl -u guacd -f
+   98  history
